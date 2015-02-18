@@ -1,0 +1,335 @@
+/**************************************************************
+ * @author  Ryo Mashima
+ * FileName /css/style.css
+ * @create  2014/05/07
+ * Remark   KINTAIのスタイルシート
+            2014/06/19  ログイン画面のブラウザごとの表示のズレ修正
+ * Last update  2015/01/23 by kato
+**************************************************************/
+
+/*フォントの統一*/
+body {
+    text-align: center;
+    font-family:'Lucida Grande',
+     'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+    Meiryo, メイリオ, sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+input {
+    font-family:'Lucida Grande',
+     'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+    Meiryo, メイリオ, sans-serif;
+}
+
+/*警告メッセージ */
+#msg {
+    color: red;
+}
+
+/*現在日時*/
+#date {
+    font-family: SimHei, monospace;
+    font-size: 28px;
+    margin:6px 0px 3px;
+}
+
+/*現在時刻*/
+#time {
+    font-family: SimHei, monospace;
+    font-size: 28px;
+    margin:6px 0px 3px;
+}
+
+/*従業員の項目欄*/
+#date, #time, #empname, #employee{
+    color: #696969;
+}
+
+/* 日付と曜日 */
+.day, .weekday{
+    background-color: #F5FFFA;
+}
+
+/* 始業、終業、休憩のセル幅統一 */
+.startTime, .endTime, .intervalTime {
+    width:80px; 
+    text-align: center;
+}
+.overTime, .workTime {
+    width:80px; 
+    text-align: center;
+}
+
+/* -------------------------------------
+ common
+------------------------------------- */
+#container {
+    text-align: center;
+}
+#container #linetop {
+	margin-top: 20px;
+	color: #D3D3D3;
+}
+#container #linebottom {
+	margin-bottom: 20px;
+	color: #D3D3D3;
+}
+fieldset#groupInfo,
+fieldset#emp {
+    width:90%;
+    margin: 30px auto 0px;
+}
+fieldset#groupInfo table#form input[type*='text'],
+fieldset#groupInfo table#form input[type*='password'],
+fieldset#emp input[type*='text'], 
+fieldset#emp input[type*='password'] {
+    width: 100%;
+}
+
+/* 戻るボタン */
+.back {
+	padding: 4px 10px;
+	background: #2E64FE;
+	border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+	text-decoration: none;
+}
+
+/*ログインフォーム*/
+fieldset#login {
+    display:inline;
+    width:90%;
+    margin-top: 10px; 
+    padding-top: 10px;
+    border: 1px solid #D3D3D3;
+}
+
+/*グループ情報フォーム*/
+fieldset#groupInfo table#btn {
+    height: 20%;
+}
+
+/*ログインフォームのテキストボックスのサイズ*/
+#login input[type*="text"], #login input[type*="password"] {
+    width: 88%;
+}
+
+/* ボタン全てにスタイル */
+input[type*="button"], input[type*="submit"] {
+    background: #2E64FE;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 0px;
+    font-size: 15px;
+    -webkit-appearance: none;
+}
+
+/*[ログイン]ボタン、[参照]ボタン*/
+input#loginBtn, input#userRef {
+  background: #2E64FE;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 12px 6px 12px;
+}
+input#loginBtn {
+    /*margin-top: 8px;*/
+    margin: 20px 0 10px;
+}
+
+/*[更新]ボタン*/
+input#updateTop, input#updateBottom {
+    width:72px;
+    height:35px;
+    font-size: 18px;
+    background:#2E64FE;
+    border-radius: 10px;
+}
+
+/*年月指定欄*/
+#yearMonth {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/*更新ボックス*/
+#updateDiv {
+    margin: 32px auto 0px;
+}
+
+
+/*ログアウトボタン*/
+input#logoutBtn {
+    background: #2E64FE;
+    width: 90px;
+    height: 35px;
+    font-size: 14px;
+    padding: 6px 12px 6px 12px;
+}
+
+/*出退勤ボタンの間隔*/
+#workin, #workout {
+    margin:auto 8px;
+}
+
+/* 出退勤(通常時) */
+#workin, #workout {
+    background: #2E64FE;
+    color: white;
+    width:88px;
+    height:52px;
+    font-size: 22px;
+    margin-top: 14px;
+    border-radius: 10px;
+    padding: 6px 12px 6px 12px;
+}
+
+
+/* 出退勤(押下不可時) */
+#workin:disabled, #workout:disabled {
+    cursor:default;
+    opacity: 0.3;
+}
+
+
+/* 勤務表 */
+#timesheet, #timesheet_admin {
+    /*border: #2D0F09 2px double;
+    border-collapse: collapse;  
+    border-spacing: 0;*/
+    margin-top: 24px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: auto;
+}
+
+/*#timesheet_admin .startTime > input[type*="text"], #timesheet_admin .endTime > input[type*="text"], table#timesheet_admin .intervalTime > input[type*="text"]{
+    width : 80px;
+    font-size: 15px;
+}*/
+
+/* 勤務表テーブルのセル */
+/*table#timesheet td, table#timesheet th, table#timesheet_admin td, table#timesheet_admin th {
+    border: 2px #808080 solid;
+}
+
+th {
+    background-color: #87CEFF;
+    color: white;
+}*/
+
+/* 勤務表　修正版 */
+#timesheet,
+#timesheet_admin {
+	border: 2px solid #999;
+	border-collapse: collapse;  
+  border-spacing: 0;
+}
+#timesheet .ttl,
+#timesheet_admin .ttl {
+	background: #87ceff;
+	color: #fff;
+}
+#timesheet .day,
+#timesheet_admin .day {
+	background: #e2e2e2;
+}
+#timesheet .lastTtl,
+#timesheet_admin .lastTtl {
+	border-bottom: 2px solid #999;
+}
+#timesheet .startTime,
+#timesheet .endTime,
+#timesheet .intervalTime,
+#timesheet .workTime,
+#timesheet .overTime,
+#timesheet .startLoc,
+#timesheet .endLoc,
+#timesheet .subttl,
+#timesheet_admin .startTime,
+#timesheet_admin .endTime,
+#timesheet_admin .intervalTime,
+#timesheet_admin .workTime,
+#timesheet_admin .overTime,
+#timesheet_admin .startLoc,
+#timesheet_admin .endLoc,
+#timesheet_admin .subttl{
+	height: 30px;
+	border-right: 1px dotted #999;
+}
+
+#timesheet_admin .startTime input[type*="text"],
+#timesheet_admin .endTime input[type*="text"],
+#timesheet_admin .intervalTime input[type*="text"],
+#timesheet_admin .workTime input[type*="text"],
+#timesheet_admin .overTime input[type*="text"] {
+	width: 80%;
+}
+#timesheet tr,
+#timesheet_admin tr {
+	border-bottom: 1px solid #999;
+}
+#timesheet .remark input[type*="text"],
+#timesheet_admin .remark input[type*="text"] {
+	width: 92%;
+}
+
+/*勤務状況テーブル*/
+#empList table {
+    width: 250px;
+}
+
+/*検索結果テーブル*/
+#empSearch table {
+    width: auto;
+}
+#empSearch td, #empSearch th {
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+#submit {
+    margin-top: 10px;
+}
+
+/*フッター*/
+#footer{
+    margin-bottom: auto;
+}
+
+/* ページの上部へボタン*/
+#pageTop {
+    background:#AFEEEE;
+    border-radius:5px;
+    color:#FFF;
+    padding:12px;
+    position:fixed;
+    bottom:15px;
+    right:35px;
+    opacity: 0.9;
+}
+#pageTop:hover{
+    background:#B0C4DE;
+    cursor: pointer;
+}
+
+/*勤務表ボタン*/
+input#userRef {
+    background-image: url("../images/timesheet.png");
+    background-repeat:no-repeat;
+    background-color:white;
+    border:none;
+    width:59px;
+    height:65px;
+    text-indent: -9999px;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+/*google map*/
+#mapField{
+    margin: 0 auto;
+}
