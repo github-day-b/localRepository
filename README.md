@@ -1,3 +1,4 @@
-# localRepository
-ローカルからリポジトリ作成
-2015/02/18　変更
+# test-Repository
+  会社テスト用
+
+# this file is markdown file
